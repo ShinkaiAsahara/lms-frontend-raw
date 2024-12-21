@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+header {
+    background-color: #EBEBEB;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    z-index: 50;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header-container .header-box {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container .h-menu {
+    width: 25%;
+    padding: 0.5rem;
+}
+
+.h-bell, .h-user {
+    width: 40%;
+    padding: 0.5rem;
+}
+
+.header-container p {
+    font-weight: bold;
+    color: maroon;
+}
+
+.hero {
+    padding: 2.5rem;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.status-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 13%;
+}
+
+.status-box {
+    height: 12.5vh;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+}
+
+.status-icon {
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.status {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.approved {
+    background-color: #3FBA81;
+}
+
+.pending {
+    background-color: #4A92FE;
+}
+
+.declined {
+    background-color: #E66874;
+}
+
+.table-container {
+    width: 70%;
+}
+
+.table-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: solid 0.5px black;
+    margin-bottom: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: maroon;
+    color: white;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    background-color: #D9D9D9;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.approve-btn, .decline-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.approve-btn {
+    background-color: #5EBE92;
+}
+
+.decline-btn {
+    background-color: #DB4755;
+}

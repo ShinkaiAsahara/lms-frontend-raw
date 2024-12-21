@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/transaction.css">
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <title>LMS | Transaction</title>
+    <style>
+        .side-nav {
+            height: 100%;
+            width: 0%; 
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #F4F4F4;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5px;
+            display: inline-block;
+            border-right: 0.3px solid rgb(131, 131, 131);
+            cursor: pointer;
+        }
+        .side-nav .top-nav{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: maroon;
+            padding: 5px;
+            border-bottom: 0.5px solid black;
+            white-space: nowrap;
+        }
+        .side-nav .top-nav p{
+            margin-left: 1.5rem;
+            cursor: pointer;
+        }
+        .side-nav .top-nav .nav-menu{
+            margin: 10px 10px 10px 25px
+        }
+        .side-nav .top-nav .nav-menu{
+            width: 2rem;
+        }
+        .mid-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+            justify-content: flex-start; 
+            padding: 1rem;
+            white-space: nowrap;
+        }
+        .side-nav .mid-nav a{
+            font-size: medium;
+            font-weight: lighter;
+            color: black;
+            text-decoration: none;
+            text-align: left;
+            margin-left: 1.5rem;
+        }
+        .mid-nav .mid-img{
+            width: 20px;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Side Nav Starts -->
+    <div class="side-nav" id="mySidenav">
+        <div class="top-nav">
+            <p>SPC LIBRARY</p>
+            <img src="/img/menu.png" alt="Close Menu" class="nav-menu" onclick="closeNav()">
+        </div>
+        <div class="mid-nav">
+            <img src="/img/dashboard.png" class="mid-img">
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/books.png" class="mid-img">
+            <a href="requestbook.html">Request Book</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/transaction.png" class="mid-img">
+            <a href="transaction.html">Transaction</a>
+        </div>
+    </div>
+    <!-- Side Nav Ends -->
+
+    <header>
+        <div class="header-container">
+            <img src="/img/menu.png" alt="Menu" class="h-menu" onclick="openNav()">
+            <div class="header-box">
+                <p>SPC LIBRARY</p>
+            </div>
+        </div>
+        <div class="header-container">
+            <div class="header-box">
+                <img src="/img/bell.png" alt="Notifications" class="h-bell">
+                <img src="/img/user.png" alt="User" class="h-user">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Title</th>
+                    <th>Start - End</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>C# & C++</td>
+                    <td>12:12-04:21</td>
+                    <td class="action-buttons">
+                        <button class="return">Returned</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+        <script src="/frontend/javascript/script.js"></script>
+</body>
+</html>

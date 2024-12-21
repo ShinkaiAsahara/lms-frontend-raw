@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin_css/admindashboard.css">
+    <link rel="shortcut icon" href="/img/icon.ico" type="image/x-icon">
+    <title>LMS | Admin Dashboard</title>
+    <style>
+        .side-nav {
+            height: 100%;
+            width: 0%; 
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #F4F4F4;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5px;
+            display: inline-block;
+            border-right: 0.3px solid rgb(131, 131, 131);
+            cursor: pointer;
+        }
+        .side-nav .top-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: maroon;
+            padding: 5px;
+            border-bottom: 0.5px solid black;
+            white-space: nowrap;
+        }
+        .side-nav .top-nav p {
+            margin-left: 1.5rem;
+            cursor: pointer;
+        }
+        .side-nav .top-nav .nav-menu {
+            margin: 10px 10px 10px 25px;
+        }
+        .mid-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+            justify-content: flex-start; 
+            padding: 1rem;
+            white-space: nowrap;
+        }
+        .side-nav .mid-nav a {
+            font-size: medium;
+            font-weight: lighter;
+            color: black;
+            text-decoration: none;
+            text-align: left;
+            margin-left: 1.5rem;
+        }
+        .mid-nav .mid-img {
+            width: 20px;
+        }
+        #notificationPanel {
+            display: none; 
+            position: fixed; 
+            top: 60px; 
+            right: 50px; 
+            background-color: #adadad; 
+            color: white; 
+            padding: 10px; 
+            border-radius: 5px; 
+            max-width: 250px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        #messagesContainer {
+            max-height: 200px; 
+            overflow-y: auto; 
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .category-title {
+            display: none; 
+        }
+        .m-c-container {
+            display: none; 
+        }
+        .visible {
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Side Nav Starts -->
+    <div class="side-nav" id="mySidenav">
+        <div class="top-nav">
+            <p>SPC LIBRARY</p>
+            <img src="/img/menu.png" alt="Close Menu" class="nav-menu" onclick="closeNav()">
+        </div>
+        <div class="mid-nav">
+            <img src="/img/dashboard.png" class="mid-img">
+            <a href="/frontend/admin_front/admindashboard.html">Dashboard</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/bookrequest.png" class="mid-img">
+            <a href="/frontend/admin_front/adminbookrequest.html">Book Request</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/usermanage.png" class="mid-img">
+            <a href="/frontend/admin_front/adminusermanage.html">User Management</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/bookmanage.png" class="mid-img">
+            <a href="/frontend/admin_front/adminbookmanage.html">Book Management</a>
+        </div>
+    </div>
+    <!-- Side Nav Ends -->
+    
+    <header>
+        <div class="header-container">
+            <img src="/img/menu.png" alt="Menu" class="h-menu" onclick="openNav()">
+            <div class="header-box">
+                <p>SPC ADMIN</p>
+            </div>
+        </div>
+        <div class="header-container">
+            <div class="header-box">
+                <img src="/img/bell.png" alt="Notifications" class="h-bell">
+                <img src="/img/user.png" alt="User" class="h-user">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="card">
+                <h2>College</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+            <div class="card">
+                <h2>SHS</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+            <div class="card">
+                <h2>JHS</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+            <div class="card">
+                <h2>Elementary</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <h2>College</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+            <div class="card">
+                <h2>SHS</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+            <div class="card">
+                <h2>JHS</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+            <div class="card">
+                <h2>Elementary</h2>
+                <p>0</p>
+                <p>view</p>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="/frontend/javascript/admin.js"></script>
+</body>
+</html>

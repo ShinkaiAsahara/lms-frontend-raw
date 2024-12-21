@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="shortcut icon" href="../img/icon.ico" type="image/x-icon">
+    <title>LMS | Dashboard</title>
+    <style>
+        .side-nav {
+            height: 100%;
+            width: 0%; 
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #F4F4F4;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 5px;
+            display: inline-block;
+            border-right: 0.3px solid rgb(131, 131, 131);
+            cursor: pointer;
+        }
+        .side-nav .top-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: maroon;
+            padding: 5px;
+            border-bottom: 0.5px solid black;
+            white-space: nowrap;
+        }
+        .side-nav .top-nav p {
+            margin-left: 1.5rem;
+            cursor: pointer;
+        }
+        .side-nav .top-nav .nav-menu {
+            margin: 10px 10px 10px 25px;
+        }
+        .mid-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center; 
+            justify-content: flex-start; 
+            padding: 1rem;
+            white-space: nowrap;
+        }
+        .side-nav .mid-nav a {
+            font-size: medium;
+            font-weight: lighter;
+            color: black;
+            text-decoration: none;
+            text-align: left;
+            margin-left: 1.5rem;
+        }
+        .mid-nav .mid-img {
+            width: 20px;
+            margin-left: 1rem;
+        }
+        #notificationPanel {
+            display: none; 
+            position: fixed; 
+            top: 60px; 
+            right: 50px; 
+            background-color: #adadad; 
+            color: white; 
+            padding: 10px; 
+            border-radius: 5px; 
+            max-width: 250px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        #messagesContainer {
+            max-height: 200px; 
+            overflow-y: auto; 
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .category-title {
+            display: none; 
+        }
+        .m-c-container {
+            display: none; 
+        }
+        .visible {
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Side Nav Starts -->
+    <div class="side-nav" id="mySidenav">
+        <div class="top-nav">
+            <p>SPC LIBRARY</p>
+            <img src="/img/menu.png" alt="Close Menu" class="nav-menu" onclick="closeNav()">
+        </div>
+        <div class="mid-nav">
+            <img src="/img/dashboard.png" class="mid-img">
+            <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/books.png" class="mid-img">
+            <a href="requestbook.html">Request Book</a>
+        </div>
+        <div class="mid-nav">
+            <img src="/img/transaction.png" class="mid-img">
+            <a href="transaction.html">Transaction</a>
+        </div>
+    </div>
+    <!-- Side Nav Ends -->
+
+
+    <!-- Notification Start -->
+    <div id="notificationPanel">
+        <div id="messagesContainer">Your book request has been approved.</div>
+    </div>
+    <!-- Notification End -->
+
+
+    <header>
+        <div class="header-container">
+            <img src="/img/menu.png" alt="Menu" class="h-menu" onclick="openNav()">
+            <div class="header-box">
+                <p>SPC LIBRARY</p>
+            </div>
+        </div>
+        <div class="header-container">
+            <div class="header-box">
+                <img src="/img/bell.png" alt="Notifications" class="h-bell">
+                <img src="/img/user.png" alt="User" class="h-user">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <nav class="m-h-nav">
+                <div class="m-h-search">
+                    <img src="/img/search.png" alt="Search" class="h-search">
+                    <input type="text" id="searchInput" name="searchInput" placeholder="Search Book...">
+                </div>
+                <div class="m-h-select">
+                    <select name="courses-level" id="courses-level">
+                        <option value="College">College</option>
+                        <option value="CASS">CASS</option>
+                        <option value="CCS">CCS</option>
+                        <option value="CRIM">CRIM</option>
+                        <option value="COMENG">ComEng</option>
+                        <option value="NURSING">Nursing</option>
+                    </select>
+                </div>
+            </nav>
+
+            <span class="category-title" id="CASS">CASS</span> 
+            <div class="m-c-container" id="CASS-container">
+                <div class="m-c-inside">
+                    <div class="category-item">
+                        <img src="/img/book2.png" alt="Book 1" class="book-image">
+                        <a href="viewbook.html"><button class="view-button">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <span class="category-title" id="CCS">CCS</span> 
+            <div class="m-c-container" id="CCS-container">
+                <div class="m-c-inside">
+                    <div class="category-item">
+                        <img src="/img/book1.png" alt="Book 1" class="book-image">
+                        <a href="viewbook.html"><button class="view-button">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <span class="category-title" id="CRIM">CRIM</span> 
+            <div class="m-c-container" id="CRIM-container">
+                <div class="m-c-inside">
+                    <div class="category-item">
+                        <img src="/img/book3.jpg" alt="Book 1" class="book-image">
+                        <a href="viewbook.html"><button class="view-button">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <span class="category-title" id="COMENG">ComEng</span> 
+            <div class="m-c-container" id="COMENG-container">
+                <div class="m-c-inside">
+                    <div class="category-item">
+                        <img src="/img/book4.jpg" alt="Book 1" class="book-image">
+                        <a href="viewbook.html"><button class="view-button">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <span class="category-title" id="NURSING">Nursing</span> 
+            <div class="m-c-container" id="NURSING-container">
+                <div class="m-c-inside">
+                    <div class="category-item">
+                        <img src="/img/book5.jpg" alt="Book 1" class="book-image">
+                        <a href="viewbook.html"><button class="view-button">View Book</button></a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script src="/frontend/javascript/script.js"></script>
+</body>
+</html>
