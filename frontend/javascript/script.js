@@ -44,24 +44,59 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 // side nav functions
-function openNav() {
-    document.getElementById("mySidenav").style.width = "210px"; 
-}
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "210px"; 
+    }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0"; 
-}
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0"; 
+    }
 
-// notification bell functionality
-document.addEventListener("DOMContentLoaded", function() {
-    const bellIcon = document.querySelector('.h-bell');
-    const notificationPanel = document.getElementById('notificationPanel');
+    // notification bell functionality
+    document.addEventListener("DOMContentLoaded", function() {
+        const bellIcon = document.querySelector('.h-bell');
+        const notificationPanel = document.getElementById('notificationPanel');
 
-    bellIcon.addEventListener('click', function() {
-        if (notificationPanel.style.display === 'none' || notificationPanel.style.display === '') {
-            notificationPanel.style.display = 'block';
-        } else {
-            notificationPanel.style.display = 'none';
-        }
+        bellIcon.addEventListener('click', function() {
+            if (notificationPanel.style.display === 'none' || notificationPanel.style.display === '') {
+                notificationPanel.style.display = 'block';
+            } else {
+                notificationPanel.style.display = 'none';
+            }
+        });
     });
-});
+
+// left right moving picture
+
+    const images = document.querySelectorAll('.collage-image');
+    const dots = document.querySelectorAll('.dot');
+    const leftArrow = document.getElementById('left-arrow');
+    const rightArrow = document.getElementById('right-arrow');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.remove('active');
+            if (i === index) {
+                img.classList.add('active');
+            }
+        });
+
+        // Highlight the corresponding dot
+        dots.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === index) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    leftArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        showImage(currentIndex);
+    });
+
+    rightArrow.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        showImage(currentIndex);
+    });
